@@ -13,7 +13,7 @@ org 7C00h
          int 10h
          lodsb           ;Load a byte of the message into AL.
                          
-         mov ah, 9       ;PC BIOS Interrupt 10 Subfunction 9 - Write character and colour
+         mov ah, 0x0E       ;PC BIOS Interrupt 10 Subfunction 9 - Write character and colour
          int 10h
  
          inc dl          ;Advance cursor
@@ -68,7 +68,7 @@ org 7C00h
          jmp Stop
 
 
- Date:   db "18.11.2022", 0
+ Date:   db __?TIME?__, 0
  Name:   db "Cernei Ion", 0
  Group:  db "FAF-201", 0
 
